@@ -1,6 +1,7 @@
 import Grid from "../components/Grid";
 import { useState } from "react";
 import { shuffle } from "../utils/shuffle";
+import { motion } from "motion/react"
 import "./styles/GamePage.css"
 
 export default function GamePage() {
@@ -9,6 +10,10 @@ export default function GamePage() {
     const [found, setFound] = useState([])
 
     function handleClick(value, index) {
+        if (clicked.includes(index)) {
+            return
+        }
+
         if (found.includes(value)) {
             return
         }
@@ -49,7 +54,14 @@ export default function GamePage() {
     if (found.length < 9) {
         return (
             <>
-                <h1>Bienvenue dans le memory de zinzin avec john cena et the rock les goats</h1>
+                <motion.h1
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.8 }}
+                >
+                    Bienvenue dans le memory de zinzin avec john cena et the rock les goats
+                </motion.h1>
+
                 <Grid cards={cards} onCardClicked={handleClick} clickedCards={clicked} />
             </>
         )
@@ -57,7 +69,7 @@ export default function GamePage() {
 
     return (
         <>
-            <h1>ET C'EST GAGNÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉ</h1>   
+            <h1>ET C'EST GAGNÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉ</h1>
         </>
     )
 }
