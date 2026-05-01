@@ -13,7 +13,7 @@ function App() {
     return (
         <>
             <audio ref={audioRef} autoPlay loop>
-                <source src="/background.mp3" type="audio/mpeg" />
+                <source src="background.mp3" type="audio/mpeg" />
             </audio>
 
             <motion.button
