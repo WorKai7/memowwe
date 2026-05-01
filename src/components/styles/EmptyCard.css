@@ -1,0 +1,10 @@
+.empty-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gray;
+    border-radius: 10px;
+    width: 200px;
+    height: 300px;
+}

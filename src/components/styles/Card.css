@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 300px;
+    background-color: lightgray;
+    box-shadow: gray 5px 5px 8px 1px;
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    scale: 1.02;
+}
+
+.image {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
